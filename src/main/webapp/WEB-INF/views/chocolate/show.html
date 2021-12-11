@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Chocolate</title>
+</head>
+<body>
+<p th:text="${all_choc.getChoc_name()}">Value</p>
+<p th:text="${all_choc.getQuantity()}">Value</p>
+<p th:text="${all_choc.getPrice()}">Value</p>
+<a th:href="@{/chocolate/{id}/edit(id=${all_choc.getId()})}">Edit</a>
+<form th:method="DELETE" th:action="@{/chocolate/{id}(id=${all_choc.getId()})}">
+    <input type="submit" value="Delete"/>
+</form>
+</body>
+</html>

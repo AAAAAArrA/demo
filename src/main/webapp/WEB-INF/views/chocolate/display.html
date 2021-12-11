@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>All chocolate</title>
+</head>
+<body>
+<p>Текст до изображения</p>
+<p class="fig"><img src="C:\Users\user\Desktop\Pictures for CW\1.jpg"
+                    width="320" height="181" alt="Фотография"></p>
+<p>Текст после изображения</p>
+<!-- chocolateList - это название коллекции по которому проходится цикл; person - временная переменная( что-то вроде i)-->
+<div th:each="I : ${chocolateList}">
+    <!-- вместо chocolate вставятся данные из коллекции -->``
+    <a th:href="@{chocolate/{id}(id=${I.getId()})}" th:text="${I.getChoc_name()}" >епать , наконецто ты читаешь тот файл</a>
+</div>
+<br/>
+<hr/>
+<a href="/chocolate/new">Create new Chocolate</a>
+</body>
+</html>

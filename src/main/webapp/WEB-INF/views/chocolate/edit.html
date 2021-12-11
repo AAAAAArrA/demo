@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit chocolate</title>
+</head>
+<body>
+<form th:method="PATCH" th:action="@{/chocolate/{id}(id=${all_choc.getId()})}" th:object="${all_choc}">
+    <label for="name">Enter name: </label>
+    <input type="text" th:field="*{choc_name}" id="name"/>
+    <br/>
+    <label for="price">Enter price: </label>
+    <input type="number" th:field="*{price}" id="price"/>
+    <br/>
+    <label for="quantity">Enter quantity: </label>
+    <input type="number" th:field="*{quantity}" id="quantity"/>
+    <br/>
+    <input type="submit" value="Update"/>
+</form>
+
+</body>
+</html>
