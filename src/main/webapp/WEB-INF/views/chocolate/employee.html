@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Employees</title>
+</head>
+<body>
+
+<!-- chocolateList - это название коллекции по которому проходится цикл; person - временная переменная( что-то вроде i)-->
+<div th:each="I : ${employee}">
+    </br>
+    <a th:text="${I.getEmpl_name()}"/>
+    <a th:text="${I.getEmpl_age()}"/>
+    <a th:text="${I.getEmpl_position()}"/>
+    </br>
+    <!-- вместо chocolate вставятся данные из коллекции -->
+</div>
+</body>
+</html>

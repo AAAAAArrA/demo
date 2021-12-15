@@ -1,4 +1,4 @@
-package aruuke.Models;
+package royal.Models;
 
 public class all_choc {
     private int id;

@@ -1,29 +1,19 @@
-#content{
-    width: 50%;
-    margin: 20px auto;
-    border: 1px solid #cbcbcb;
+body {
+    background-color: cadetblue;
 }
-form{
-    width: 50%;
-    margin: 20px auto;
+.card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
 }
-form div{
-    margin-top: 5px;
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
-#img_div{
-    width: 80%;
-    padding: 5px;
-    margin: 15px auto;
-    border: 1px solid #cbcbcb;
+
+/* Add some padding inside the card container */
+.container {
+    padding: 2px 16px;
 }
-#img_div:after{
-    content: "";
-    display: block;
-    clear: both;
-}
-img{
-    float: left;
-    margin: 5px;
-    width: 300px;
-    height: 140px;
-}
+

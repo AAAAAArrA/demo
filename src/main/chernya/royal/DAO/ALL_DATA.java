@@ -1,11 +1,13 @@
-package aruuke.DAO;
+package royal.DAO;
 
-import aruuke.Models.all_choc;
+import royal.Models.all_choc;
 import org.springframework.stereotype.Component;
+import royal.Models.employees;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+
 @Component
 public class ALL_DATA {
     private static final String URL= "jdbc:mysql://localhost:3306/mydb";
@@ -13,8 +15,9 @@ public class ALL_DATA {
     static final String PASSWORD = "12345";
     static final String JDBC_DRIVER  = "com.mysql.cj.jdbc.Driver";
     List<all_choc> chocolateList;
+    List<employees> employeesList;
 
-    private static java.sql.Connection connection;
+    private static Connection connection;
 
     static {
         try {
@@ -102,6 +105,38 @@ public class ALL_DATA {
             e.printStackTrace();
         }
 
+    }
+
+    public void sale(int id, all_choc soldChocolate){
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement("UPDATE all_choc SET quantity_choc=quantity_choc-? WHERE id_choc=?");
+            preparedStatement.setInt(1, soldChocolate.getQuantity());
+            preparedStatement.setInt(2,id);
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+
+    }
+    public List<employees> empl_display(){
+        employeesList = new ArrayList<>();
+        try{
+            Statement statement = connection.createStatement();
+            ResultSet rs = statement.executeQuery("SELECT * FROM employees");
+            while (rs.next()) {
+                employees employee = new employees();
+                employee.setEmpl_id(rs.getInt("id"));
+                employee.setEmpl_name(rs.getString("name"));
+                employee.setEmpl_age(rs.getInt("age"));
+                employee.setEmpl_position(rs.getString("position"));
+
+                employeesList.add(employee);
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return employeesList;
     }
 
 }

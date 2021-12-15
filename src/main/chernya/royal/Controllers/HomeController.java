@@ -1,12 +1,14 @@
-package aruuke.Controllers;
+package royal.Controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
+@RequestMapping
 public class HomeController {
     @GetMapping
-    String getPage(){
-        return "chocolate/main";
+    public String home(){
+        return "/chocolate/main";
     }
 }

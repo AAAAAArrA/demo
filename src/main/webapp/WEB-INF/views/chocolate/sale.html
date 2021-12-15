@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Sale chocolate</title>
+    <link rel="stylesheet" href="">
+</head>
+<body>
+<form th:method="PATCH" th:action="@{/chocolate/{id}(id=${all_choc.getId()})}" th:object="${all_choc}">
+
+    <label for="quantity">Enter quantity: </label>
+    <input type="number" th:field="*{quantity}" id="quantity"/>
+    <br/>
+    <br/>
+    <input type="submit" value="Buy"/>
+</form>
+
+</body>
+</html>

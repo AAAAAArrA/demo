@@ -1,4 +1,4 @@
-package aruuke.Configuration;
+package royal.Configuration;
 
 import org.springframework.web.filter.HiddenHttpMethodFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
